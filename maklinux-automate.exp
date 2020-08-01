@@ -1,0 +1,23 @@
+#! /bin/env expect
+
+set timeout -1
+
+spawn /opt/Conquest-DICOM-Server/maklinux
+
+
+expect "Please choose DB type"
+
+## we want to force it to compile and select the sqlite database so we've just got 'something'
+sleep 1
+send -- "3\r"
+
+expect "Regenerate the database?"
+sleep 1
+send -- "n\r"
+
+expect "Install as service"
+sleep 1
+send -- "n\r"
+
+# hopefully it all exists sanely.
+expect eof

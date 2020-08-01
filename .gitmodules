@@ -1,0 +1,3 @@
+[submodule "Conquest-DICOM-Server"]
+	path = Conquest-DICOM-Server
+	url = https://github.com/marcelvanherk/Conquest-DICOM-Server.git
