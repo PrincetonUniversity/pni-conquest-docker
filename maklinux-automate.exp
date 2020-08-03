@@ -2,7 +2,7 @@
 
 set timeout -1
 
-spawn /opt/Conquest-DICOM-Server/maklinux
+spawn /opt/Conquest-DICOM-Server/maklinux_trimmed
 
 
 expect "Please choose DB type"
