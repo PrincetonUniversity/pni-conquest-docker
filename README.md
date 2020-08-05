@@ -17,7 +17,7 @@ Some decisions on this implementation will be carried forward from older install
 * group: `conquest`
 * gid: `10000`
 
-*note:* The data folders are owned by this UID with world read enabled to allow labs access to their data without the ability to alter the data stored 
+*note:* The data folders are owned by this UID with world read enabled to allow labs access to their data without the ability to alter the data stored
 
 ### Structured File Layout
 * FileNameSyntax = %V0008,1090-%callingae/%V0008,1030[0,5]/%studydate[0,3]/%id-%studydate[4,7]-%V0040,0245[0,3]/dcm/%seriesid-%imagenum-%V0018,0086.dcm
@@ -25,3 +25,6 @@ Some decisions on this implementation will be carried forward from older install
 
 ### PACS Device Name
 * PNICONQUEST
+
+
+## Test-GUI

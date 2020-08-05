@@ -1,0 +1,56 @@
+# This file contains configuration information for the DICOM server
+# Example Linux version using SqLite
+# Copy this file to dicom.ini to use it
+# 20190110: For 1.5.0beta
+# 20200308: Templated
+
+[sscscp]
+MicroPACS                = sscscp
+
+# Network configuration: server name and TCP/IP port#
+MyACRNema                = PNICONQUEST
+TCPPort                  = 5678
+
+# Host for postgres or mysql only, name, username and password for database
+SQLHost                  =
+SQLServer                =
+Username                 =
+Password                 =
+PostGres                 = 0
+MySQL                    = 0
+SQLite                   = 0
+UseEscapeStringConstants = 0
+DoubleBackSlashToDB      = 0
+
+# Configure server
+ImportExportDragAndDrop  = 0
+ZipTime                  = 05:
+UIDPrefix                = 99999.99999
+EnableComputedFields     = 1
+
+#custom file syntax
+FileNameSyntax = %V0008,1090-%callingae/%V0008,1030[0,5]/%studydate[0,3]/%id-%studydate[4,7]-%V0040,0245[0,3]/dcm/%seriesid-%imagenum-%V0018,0086.dcm
+#current layout: modelname-AEtitle/<first six characters of study description (normalized labnames)>/<year>/<monthday-minutessecond>/dcm/seriesid-imagenumber-echonumber.dcm
+
+# Configuration of compression for incoming images and archival
+DroppedFileCompression   = un
+IncomingCompression      = un
+ArchiveCompression       = as
+
+# For debug information
+PACSName                 = PNICONQUEST
+OperatorConsole          = 127.0.0.1
+DebugLevel               = 2
+
+# Configuration of disk(s) to store images
+MAGDeviceFullThreshold   = 30
+MAGDevices               = 1
+MAGDevice0               = /mnt/data/
+
+### logging - should log to terminal.
+StatusLog = /dev/fd/1
+TroubleLog = /dev/fd/1
+
+
+[lua]
+association = package.path=package.path..';'..Global.basedir..'lua/?.lua'
