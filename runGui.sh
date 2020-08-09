@@ -4,4 +4,4 @@
 
 docker build -f ginkgocadx.Dockerfile -t ginkgocadx-gui .
 
-docker run --rm -it --net=host -e DISPLAY -v $HOME/.Xauthority:/root/.Xauthority ginkgocadx-gui
+docker run --rm -it --net=host -e DISPLAY -v $HOME/.Xauthority:/root/.Xauthority -v $PWD/conquest-ref-data:/mnt/data ginkgocadx-gui

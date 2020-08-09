@@ -9,7 +9,7 @@ The PNI install of conquest is built around using it in 'sink' mode, there is no
 Some decisions on this implementation will be carried forward from older installs; many or all of these can be changed in the future but for now we'll just be carrying them forward:
 
 ### Networking Config
-* Port: 5678
+* Port: `5678`
 
 ### User ID and UID
 * user: `conquest`
@@ -20,11 +20,16 @@ Some decisions on this implementation will be carried forward from older install
 *note:* The data folders are owned by this UID with world read enabled to allow labs access to their data without the ability to alter the data stored
 
 ### Structured File Layout
-* FileNameSyntax = %V0008,1090-%callingae/%V0008,1030[0,5]/%studydate[0,3]/%id-%studydate[4,7]-%V0040,0245[0,3]/dcm/%seriesid-%imagenum-%V0018,0086.dcm
-#current layout: modelname-AEtitle/<first six characters of study description (normalized labnames)>/<year>/<monthday-minutessecond>/dcm/seriesid-imagenumber-echonumber.dcm
+```
+FileNameSyntax = %V0008,1090-%callingae/%V0008,1030[0,5]/%studydate[0,3]/%id-%studydate[4,7]-%V0040,0245[0,3]/dcm/%seriesid-%imagenum-%V0018,0086.dcm
+```
+current layout: `modelname-AEtitle/<first six characters of study description (normalized labnames)>/<year>/<monthday-minutessecond>/dcm/seriesid-imagenumber-echonumber.dcm`
+
+While verbose this naming structure
 
 ### PACS Device Name
 * PNICONQUEST
 
 
 ## Test-GUI
+It's possible to bring up a GinkgoCADx interface to test connections to the backend service, this is a WIP meant for testing and is not meant to be used as part of the deployed platform.  This is only expected to work on a linux deskop (due to display access variance in windows/osx). Simply run the `runGui.sh` command in a second terminal and you'll get a GinkgoCADx screen. The container will terminate when the application is closed.
