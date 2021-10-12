@@ -4,7 +4,8 @@ services:
     build:
       context: .
       dockerfile: conquest.Dockerfile
+    restart: always
     ports:
       - 5678:5678
     volumes:
-      - ./data:/mnt/data
+      - /mnt/bucket/dicom/conquest:/mnt/data
