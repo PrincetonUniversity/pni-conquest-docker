@@ -23,6 +23,13 @@ RUN cd /opt  && \
 
 COPY ./conf/dicom.ini.pni /opt/Conquest-DICOM-Server/dicom.ini
 
+RUN mkdir -p /opt/scripts
+
+## script for automatically archiving dicom files
+COPY ./scripts/ConquestArchive.sh /opt/scripts/ConquestArchive.sh
+
+RUN chmod +x /opt/scripts/ConquestArchive.sh && chmod -R +r /opt/scripts
+
 USER conquest
 
 CMD ["/opt/Conquest-DICOM-Server/dgate"]

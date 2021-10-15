@@ -5,7 +5,16 @@ services:
       context: .
       dockerfile: conquest.Dockerfile
     restart: always
+    env_file:
+      - .env
+    environment:
+      - TZ="American/New_York"
     ports:
       - 5678:5678
     volumes:
       - /mnt/bucket/dicom/conquest:/mnt/data
+      - /mnt/puddle/PNI-archive/dicom:/mnt/archive
+    labels:
+      - "deck-chores.conquest-dailysweep.command=/opt/scripts/ConquestArchive.sh"
+      - "deck-chores.conquest-dailysweep.cron=3 0 0"
+
