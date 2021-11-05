@@ -10,6 +10,8 @@ RUN apt-get update && apt-get install -y \
       rm -rf /tmp/* && \
       rm -rf /var/tmp/*
 
+COPY ./ConquestArchive.sh /opt/ConquestArchive.sh
+
 VOLUME ["/mnt/data"]
 
 RUN useradd -ms /bin/bash user
