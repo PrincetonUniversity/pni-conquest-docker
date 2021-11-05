@@ -12,7 +12,7 @@ services:
     ports:
       - 5678:5678
     volumes:
-      - /mnt/bucket/dicom/conquest:/mnt/data
+      - /mnt/cup/PNI-facilities/fMRI//dicom/conquest:/mnt/data
       - /mnt/puddle/PNI-archive/dicom:/mnt/archive
     labels:
       - "deck-chores.conquest-dailysweep.command=/opt/scripts/ConquestArchive.sh"
