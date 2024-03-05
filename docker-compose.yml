@@ -18,3 +18,8 @@ services:
       - "deck-chores.conquest-dailysweep.command=/opt/scripts/ConquestArchive.sh"
       - "deck-chores.conquest-dailysweep.cron=3 0 0"
 
+
+networks:
+  default:
+    driver_opts:
+      com.docker.network.bridge.name: conquestnet
