@@ -3,7 +3,7 @@ services:
   conquest:
     build:
       context: .
-      dockerfile: conquest.Dockerfile
+      dockerfile: conquest-debian.Dockerfile
     restart: always
     env_file:
       - .env

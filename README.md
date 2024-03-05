@@ -33,3 +33,29 @@ While verbose this naming structure
 
 ## Test-GUI
 It's possible to bring up a GinkgoCADx interface to test connections to the backend service, this is a WIP meant for testing and is not meant to be used as part of the deployed platform.  This is only expected to work on a linux deskop (due to display access variance in windows/osx). Simply run the `runGui.sh` command in a second terminal and you'll get a GinkgoCADx screen. The container will terminate when the application is closed.
+
+
+# Checked out version in current tagged release:
+
+commit a5d312ded0fc7ec03cc19e5ccfe99dcd96408734
+Merge: d95bb9e f11829e
+Author: marcelvanherk <marcelvanherk@users.noreply.github.com>
+Date:   Sat Jun 20 21:35:31 2020 +0100
+
+    Merge branch 'master' of https://github.com/marcelvanherk/Conquest-DICOM-Server
+
+commit d95bb9e3b8377c6614ecef08a8122941e1bdfd55
+Author: marcelvanherk <marcelvanherk@users.noreply.github.com>
+Date:   Sat Jun 20 21:31:46 2020 +0100
+
+    1.5.0a changes
+    
+    20200617        mvh     Replaced UNIX version of SendBinary with luasocket inspired waiting code
+    20200618        mvh     Made send() timeout ~20s by increasingly longer nanosleep
+    20200316        mvh Added dogloballua: servercommand - runs in global context in critical section
+                        Also added critical section for nightly, background and dgate.lua
+    20200528        mvh Version to 1.5.0a; changed truncation of AnyPageExceptions from 255 to 511
+                            Use single DB per folder in LoadAndDeleteDir
+    20200528        mvh     Fixed Pivoglot reported use of GetAtoi instead of GetUINT16 to read bitsperpixel
+
+

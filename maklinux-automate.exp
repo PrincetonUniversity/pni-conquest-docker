@@ -1,4 +1,4 @@
-#! /bin/env expect
+#! /usr/bin/env expect
 
 set timeout -1
 
